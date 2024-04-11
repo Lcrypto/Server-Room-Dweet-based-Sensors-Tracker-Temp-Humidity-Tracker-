@@ -31,7 +31,7 @@ print(baro.temperature('C'));
 //const year = day * 365;
 
 // Divide Time with a year
-const d = new Date();
+
 //let years = Math.round(d.getTime() / year);
 //print(years);
 
@@ -39,12 +39,13 @@ const d = new Date();
 
 function run() {
   setInterval(function() {
-  const dayOfMonth = d.getDate();
-  const monthIndex = d.getMonth();
-  const currentHour = d.getHours();
-  const currentMinutes = d.getMinutes();
-  const currentSeconds = d.getSeconds();
-  const currentYear = d.getFullYear();
+   d = new Date();
+   dayOfMonth = d.getDate();
+   monthIndex = d.getMonth();
+   currentHour = d.getHours();
+   currentMinutes = d.getMinutes();
+   currentSeconds = d.getSeconds();
+   currentYear = d.getFullYear();
     dht.read(function(a) {
       dweet.send({
         Analog_temperature: temp.read('C'),
